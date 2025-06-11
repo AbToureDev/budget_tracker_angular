@@ -1,1 +1,28 @@
-<p>create-account works!</p>
+<div class="w-full h-full flex justify-center ">
+  <div class=" container flex md:flex-row flex-col gap-y-3.5 ">
+    <div [formGroup]="form" class="flex flex-col gap-y-4">
+      <h1 class="text-[72px] font-bold">
+        Take control of <span class="text-cyan-400">Your Money</span>
+      </h1>
+
+      <p class="text-xl">Personal budgeting is the secret financial freedom. Start your journey today.</p>
+
+      <p-floatlabel>
+        <input id="username" pInputText formControlName="value" />
+        <label for="username">Enter account name</label>
+      </p-floatlabel>
+      <button (click)="handleClick()"
+              [disabled]="form.invalid"
+              class="btn flex items-center gap-1 bg-blue-950 rounded-lg px-1 w-fit text-[19px] border-none text-white ">
+        Create Account
+        <span class=""></span>
+        <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
+      </button>
+    </div>
+    <div class="flex-1">
+      <img [src]="image" alt="" srcset="">
+    </div>
+  </div>
+
+
+</div>

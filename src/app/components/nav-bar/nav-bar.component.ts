@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../services/user/user.service';
 import {NgIf} from '@angular/common';
 
@@ -11,8 +11,14 @@ import {NgIf} from '@angular/common';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
-export class NavBarComponent {
-  constructor( public readonly userService:UserService) {
+export class NavBarComponent implements OnInit{
+  constructor( public readonly userService:UserService) {}
+
+
+  ngOnInit(): void {
+    // console.log(this.user)
   }
+
+
 
 }
