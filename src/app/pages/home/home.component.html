@@ -5,5 +5,14 @@
   <div class="w-full gap-x-8 mt-6">
     <app-form-wrapper></app-form-wrapper>
   </div>
+  <div class="py-5" *ngIf="budgetService.budgetCards && budgetService.budgetCards.length > 0">
+    <h2 class="mini-title">Existing Budgets</h2>
+    <div class="flex w-full flex-wrap gap-4">
+      <div class="" *ngFor="let item of budgetService.budgetCards;  let i = index">
+        <app-budget-card [config]="item"></app-budget-card>
+
+      </div>
+    </div>
+  </div>
 
 </div>

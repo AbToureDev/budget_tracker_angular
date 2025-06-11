@@ -1,0 +1,53 @@
+<div class="flex justify-around items-center gap-8 relative">
+<!--  // CREATE BUDGET-->
+  <div [formGroup]="formBudget" class="border-2 space-y-5 bg-sky-50 flex-1 p-3">
+    <h1 class="font-bold text-xl">Create Budget</h1>
+    <div class="flex flex-col gap-2">
+      <label class="font-medium" for="budgetname">Budget Name</label>
+      <input pInputText id="budgetname" aria-describedby="username-help" formControlName="name" />
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label class="font-medium" for="amount">Amount</label>
+      <input  type="number" pInputText id="amount" aria-describedby="username-help"  formControlName="amount" />
+    </div>
+
+    <button (click)="handleAddBudget()"
+            [disabled]="formBudget.invalid"
+            class="btn flex items-center gap-1 bg-blue-950 rounded-lg px-1 w-fit text-[19px] border-none text-white ">
+      Create Budget
+      <span class=""></span>
+      <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
+    </button>
+  </div>
+
+<!--  CREATE EXPENSE-->
+  <div [formGroup]="formExpense" class="space-y-5 border-2 bg-sky-50 flex-1 p-3">
+    <h1 class="font-bold text-xl">Add new Expense</h1>
+    <div class="flex md:gap-24 ">
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="expensename">Expense Name</label>
+        <input pInputText id="expensename" aria-describedby="username-help" formControlName="name" />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="amountexpense">Amount</label>
+        <input type="number" pInputText id="amountexpense" aria-describedby="username-help" formControlName="amountexpense" />
+      </div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <label class="font-medium" for="amountexpense">Budget Category</label>
+      <p-select [options]="budgetCategories" formControlName="select" optionLabel="name" [showClear]="true" placeholder="Budget Category" class="w-full" />
+
+    </div>
+
+    <button (click)="handleClick()"
+            [disabled]="formExpense.invalid"
+            class="btn flex items-center gap-1 bg-blue-950 rounded-lg px-1 w-fit text-[19px] border-none text-white ">
+      Create Expense
+      <span class=""></span>
+      <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
+    </button>
+  </div>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="" *ngIf="config && borderColor && textColor">
+  <div class="flex flex-col gap-4 border-2 border-solid {{borderColor}}
+  py-4 px-4 rounded-[12px] bg-white">
+    <div class="progress-text flex space-x-2 w-ful justify-between items-center">
+      <p class="text-2xl {{textColor}} font-bold">{{config.name}}</p>
+      <p class="text-2xl {{textColor}}">{{config.budget | currency: 'R'}} Budgeted</p>
+    </div>
+  </div>
+</div>
